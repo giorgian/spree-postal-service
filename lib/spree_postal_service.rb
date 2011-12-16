@@ -16,7 +16,7 @@ module SpreePostalService
     initializer "spree.register.calculators" do |app|
       require 'calculator/postal_service'
 
-      app.config.spree.calculators.shipping_methods << Calculator::PostalService 
+      ShippingMethod.register_calculator(Calculator::PostalService)
     end
   end
 end
